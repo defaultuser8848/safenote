@@ -32,8 +32,16 @@ SafeNote使用python3编写而成，你只需要安装python3即可使用。
 `obj.post('test',b'test')`
 #### 获取内容
 获取内容需要提供页面名称。
+
 `obj.get(name,namespace,key)`
+
 其中，name为字符串类型的页面名称，namespace为命名空间，key为密钥。
 后两个参数可以不提供，默认为你创建对象时设置的。
 返回值：页面内容或者None
 如果获成功，返回页面内容(bytes类型)，否则返回None。
+例如：
+
+`obj.get('test')`
+
+### 关于tools.py
+tools.py是分布式高频覆盖器的源代码，为了防止破坏，我们不会提供，你可以按照模板实现，也可以按照公开的libnotems修改（之后可能会做SDK）
