@@ -60,6 +60,14 @@ class SafeNote(object):
         page=self.convert(namespace,name,key)
         f=await tools.getContent(page)
         return self.decrypt(f,key)
+    async def clean(self,name,namespace=None,key=None):
+        if namespace is None:
+            namespace=self.namespace
+        if key is None:
+            key=self.key
+        page=self.convert(namespace,name,key)
+        await tools.setContent(page,'')
+        return page
     @staticmethod
     def to_sync(x):
         return asyncio.get_event_loop().run_until_complete(x)
