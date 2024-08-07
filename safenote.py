@@ -1,5 +1,5 @@
 import base64
-from _sha256 import sha256
+from hash import sha256
 import struct
 from Crypto.Cipher import AES
 import tools
