@@ -45,5 +45,14 @@ SafeNote使用python3编写而成，你只需要安装python3即可使用。
 
 `obj.get('test')`
 
+### 完全清除内容
+完全内容需要提供页面名称。
+`obj.clean(name,namespace,key)`
+其中，name为字符串类型的页面名称，namespace为命名空间，key为密钥。
+后两个参数可以不提供，默认为你创建对象时设置的。
+返回值：页面的实际地址
+注意，这与`obj.post(name,b'')`有本质的不同，clean会直接调用`tools.setContent`方法，将实际存储内容的页面覆盖为空而不进行加密操作，就像你没有对它使用过SafeNote一样。
+例如：
+`obj.clean('test')`
 ### 关于tools.py
 tools.py是分布式高频覆盖器的源代码，为了防止破坏，我们不会提供，你可以按照模板实现，也可以按照公开的libnotems修改（之后可能会做SDK）
