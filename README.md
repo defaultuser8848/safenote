@@ -49,7 +49,7 @@ SafeNote使用python3编写而成，你只需要安装python3即可使用。
 
 `obj.get('test')`
 
-### 完全清除内容
+#### 完全清除内容
 完全内容需要提供页面名称。
 `obj.clean(name,namespace,key)`
 其中，name为字符串类型的页面名称，namespace为命名空间，key为密钥。
